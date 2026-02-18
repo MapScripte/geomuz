@@ -224,12 +224,12 @@
 
 <script>
     const continentData = {
-        Eurasia: { name: "Евразия", music: "audio/eurasia.mp3", info: "<b>Евразия</b> — ең үлкен материк. Онда әлемдегі ең биік шың - Эверест орналасқан." },
-        Africa: { name: "Африка", music: "audio/africa.mp3", info: "<b>Африка</b> — ең ыстық материк. Сахара шөлі мен Ніл өзені осы жерде." },
-        NorthAmerica: { name: "Солтүстік Америка", music: "audio/north_america.mp3", info: "<b>Солтүстік Америка</b> — үлкен көлдер мен каньондар елі." },
-        SouthAmerica: { name: "Оңтүстік Америка", music: "audio/south_america.mp3", info: "<b>Оңтүстік Америка</b> — Амазонка ормандары мен Анд тауларының отаны." },
-        Australia: { name: "Австралия", music: "audio/australia.mp3", info: "<b>Австралия</b> — ең кіші әрі ең оқшау материк." },
-        Antarctica: { name: "Antarctica", music: "audio/antarctica.mp3", info: "<b>Антарктида</b> — мәңгілік мұз құрсауындағы материк." }
+        Eurasia: { name: "Евразия", music: "eurasia.mp3", info: "<b>Евразия</b> — ең үлкен материк. Онда әлемдегі ең биік шың - Эверест орналасқан." },
+        Africa: { name: "Африка", music: "africa.mp3", info: "<b>Африка</b> — ең ыстық материк. Сахара шөлі мен Ніл өзені осы жерде." },
+        NorthAmerica: { name: "Солтүстік Америка", music: "north_america.mp3", info: "<b>Солтүстік Америка</b> — үлкен көлдер мен каньондар елі." },
+        SouthAmerica: { name: "Оңтүстік Америка", music: "south_america.mp3", info: "<b>Оңтүстік Америка</b> — Амазонка ормандары мен Анд тауларының отаны." },
+        Australia: { name: "Австралия", music: "australia.mp3", info: "<b>Австралия</b> — ең кіші әрі ең оқшау материк." },
+        Antarctica: { name: "Antarctica", music: "antarctica.mp3", info: "<b>Антарктида</b> — мәңгілік мұз құрсауындағы материк." }
     };
 
     let round = 1, score = 0, timer = 60, timerInt, currentKey = "", gameState = "quiz";
@@ -297,11 +297,11 @@
             score += 10;
             document.getElementById('ui-score').innerText = score;
             document.getElementById(correct).classList.add('flash-success');
-            playSFX("audio/correct.mp3");
+            playSFX("correct.mp3");
             showModal("ЖАРАЙСЫҢ! ✅", `Бұл - ${continentData[correct].name}!`);
         } else {
             document.getElementById(correct).classList.add('flash-error');
-            playSFX("audio/wrong.mp3");
+            playSFX("wrong.mp3");
             showModal("ҚАТЕ! ❌", `Бұл ${continentData[correct].name} еді.`);
         }
     }
@@ -336,4 +336,5 @@
     function playSFX(s) { const a = document.getElementById('audio-sfx'); a.src = s; a.play().catch(e=>{}); }
 </script>
 </body>
+
 </html>
